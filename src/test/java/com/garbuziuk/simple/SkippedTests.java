@@ -1,4 +1,4 @@
-package com.garbuziuk;
+package com.garbuziuk.simple;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
