@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def junitVersion = "5.8.2"
+
+dependencies {
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:$junitVersion"
+    )
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+          events "started", "skipped", "failed", "standard-error", "standard_out"
+          exceptionFormat "short"
+        }
+    }
+}

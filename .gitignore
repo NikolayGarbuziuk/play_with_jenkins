@@ -1,3 +1,14 @@
+# Project exclude paths
+#idea
+.idea/*
+#Gradle
+.gradle/*
+gradle/*
+gradlew
+gradlew.bat
+build/*
+settings.gradle
+
 # Compiled class file
 *.class
 
