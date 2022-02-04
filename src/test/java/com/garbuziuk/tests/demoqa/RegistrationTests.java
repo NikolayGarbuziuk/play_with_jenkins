@@ -1,4 +1,4 @@
-package com.garbuziuk.demoqa;
+package com.garbuziuk.tests.demoqa;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ public class RegistrationTests extends TestBase{
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
-        $("#firstName").setValue("Alex");
+        $("#firstName_DeleteMe").setValue("Alex");
         $("#lastName").setValue("Egorov");
         $("#userEmail").setValue("alex@egorov.com");
         $("#genterWrapper").$(byText("Other")).click();

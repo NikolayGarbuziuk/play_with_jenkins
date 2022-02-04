@@ -1,4 +1,4 @@
-package com.garbuziuk.simple;
+package com.garbuziuk.tests.simple;
 
 import org.junit.jupiter.api.Test;
 
