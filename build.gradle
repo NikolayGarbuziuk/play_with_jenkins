@@ -32,19 +32,31 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:6.2.1",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "org.junit.jupiter:junit-jupiter:$junitVersion"
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.aspectj:aspectjweaver:1.9.7"
     )
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
 }
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+//    systemProperty("browser", "safari")
+//    systemProperty("environment", System.getProperty("environment", "stage")) //set default env. for test
 
     testLogging {
         lifecycle {
 //            events "started", "failed"
-            events "started", "skipped", "failed", "standard-error", "standard_out"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
     }
 }
