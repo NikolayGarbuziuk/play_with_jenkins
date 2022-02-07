@@ -8,3 +8,6 @@
 
 **_Allure Report:_**
 ![img.png](readmeMedia/img.png)
+
+**_Telegram Notification_**
+![img.png](readmeMedia/img4.png)
